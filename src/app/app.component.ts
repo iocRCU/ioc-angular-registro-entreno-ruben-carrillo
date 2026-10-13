@@ -6,7 +6,10 @@ import { RouterOutlet } from '@angular/router';
   selector: 'app-root',
   styleUrl: './app.component.scss',
   templateUrl: './app.component.html',
+  standalone: true
 })
 export class App {
-  protected readonly title = signal('ioc-angular-registro-entreno-ruben-carrillo');
+  appName: string = 'TTracker';
+  authorName: string = 'Ruben Carrillo';
+  appPurpose: string = 'Registro de entrenamientos con sus variantes de ejercicios, cargas y volumen, tiempo, etc.';
 }
