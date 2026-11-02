@@ -1,0 +1,14 @@
+.badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.badge-fuerza { background-color: #e74c3c; color: #fff; }
+.badge-cardio { background-color: #3498db; color: #fff; }
+.badge-flexibilidad { background-color: #9b59b6; color: #fff; }
+.badge-descanso { background-color: #95a5a6; color: #fff; }
+.badge-combinado { background-color: #e67e22; color: #fff; }

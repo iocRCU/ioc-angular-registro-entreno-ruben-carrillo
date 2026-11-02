@@ -10,5 +10,5 @@ import { TagBadge } from '../tag-badge/tag-badge.component';
   styleUrl: './entrenamiento-card.component.scss'
 })
 export class EntrenamientoCard {
-  @Input() entrenamiento: Entrenamiento | null = null;
+  @Input({ required: true }) entrenamiento!: Entrenamiento;
 }

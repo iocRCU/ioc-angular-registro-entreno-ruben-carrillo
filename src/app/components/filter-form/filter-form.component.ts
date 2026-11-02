@@ -1,5 +1,6 @@
-import { Component, Output, EventEmitter, OnInit } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { FiltroEntrenamientos } from '../../models/filtro.model';
 
 @Component({
   imports: [FormsModule],
@@ -8,27 +9,31 @@ import { FormsModule } from '@angular/forms';
   templateUrl: './filter-form.component.html',
   styleUrl: './filter-form.component.scss'
 })
-export class FilterForm implements OnInit {
-  @Output() filterChange = new EventEmitter<{ text: string; categoria: string }>();
+export class FilterForm {
+  @Output() filterChange = new EventEmitter<FiltroEntrenamientos>();
   @Output() resetChange = new EventEmitter<void>();
 
-  searchText: string = '';
-  categoria: string = '';
-  categorias: string[] = ['', 'fuerza', 'cardio', 'flexibilidad', 'descanso', 'combinado'];
+  readonly MIN_LENGTH = 2;
+  readonly categorias = ['fuerza', 'cardio', 'flexibilidad', 'descanso', 'combinado'];
 
-  ngOnInit() {
+  searchText = '';
+  categoria = '';
+
+  onSearchChange(valor: string): void {
+    this.searchText = valor;
     this.emitFilter();
   }
 
-  onInputChange() {
+  onCategoriaChange(valor: string): void {
+    this.categoria = valor;
     this.emitFilter();
   }
 
-  emitFilter() {
+  emitFilter(): void {
     this.filterChange.emit({ text: this.searchText, categoria: this.categoria });
   }
 
-  reset() {
+  reset(): void {
     this.searchText = '';
     this.categoria = '';
     this.resetChange.emit();

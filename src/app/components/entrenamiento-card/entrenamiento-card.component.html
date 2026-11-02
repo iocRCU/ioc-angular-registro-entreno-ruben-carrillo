@@ -1,15 +1,13 @@
-@if (entrenamiento) {
-  <div class="card-detail">
-    <h2>{{ entrenamiento.titulo }}</h2>
-    
-    <app-tag-badge [categoria]="entrenamiento.categoria" />
-    
-    <p class="description">{{ entrenamiento.descripcion }}</p>
-    
-    <div class="meta-info">
-      <p><strong>Fecha:</strong> {{ entrenamiento.fecha }}</p>
-      <p><strong>Duración:</strong> {{ entrenamiento.duracionMinutos }} min</p>
-      <p><strong>Destacado:</strong> {{ entrenamiento.destacado ? 'Sí' : 'No' }}</p>
-    </div>
+<div class="card-detail">
+  <h2>{{ entrenamiento.titulo }}</h2>
+
+  <app-tag-badge [categoria]="entrenamiento.categoria" />
+
+  <p class="description">{{ entrenamiento.descripcion }}</p>
+
+  <div class="meta-info">
+    <p><strong>Data:</strong> {{ entrenamiento.fecha }}</p>
+    <p><strong>Durada:</strong> {{ entrenamiento.duracionMinutos }} min</p>
+    <p><strong>Destacat:</strong> {{ entrenamiento.destacado ? 'Sí' : 'No' }}</p>
   </div>
-}
+</div>

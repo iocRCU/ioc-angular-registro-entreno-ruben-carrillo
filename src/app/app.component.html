@@ -4,32 +4,28 @@
   <p>Ambiente de trabajo creado per {{ authorName }}, cuya finalidad es: {{ appPurpose }}</p>
 
   <div class="layout">
-    <!-- Columna izquierda: filtros y lista -->
     <div class="sidebar">
       <app-filter-form
         (filterChange)="applyFilter($event)"
         (resetChange)="resetFilter()"
       />
-      
+
       <app-entrenamiento-list
         [entrenamientos]="entrenamientos()"
         (selectEntrenamiento)="selectedEntrenamiento.set($event)"
       />
     </div>
 
-    <!-- Columna derecha: detalle del seleccionado -->
     <div class="detail-panel">
-      @if (selectedEntrenamiento()) {
-        <app-entrenamiento-card
-          [entrenamiento]="selectedEntrenamiento()"
-        />
+      @if (selectedEntrenamiento(); as seleccionado) {
+        <app-entrenamiento-card [entrenamiento]="seleccionado" />
       } @else {
         <p>Selecciona un entrenamiento para ver su detalle</p>
       }
     </div>
   </div>
 
-  <div class="status">Projecte base llest - El Hot reload funciona perfectamente</div>
+  <div class="status">Projecte base llest - El hot reload funciona perfectament</div>
 </div>
 
 <router-outlet />
