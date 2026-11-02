@@ -1,0 +1,12 @@
+<div class="list-container">
+  @for (entrenamiento of entrenamientos; track entrenamiento.id) {
+    <div 
+      class="list-item"
+      (click)="select(entrenamiento)"
+    >
+      <h3>{{ entrenamiento.titulo }}</h3>
+      <p>{{ entrenamiento.descripcion }}</p>
+      <app-tag-badge [categoria]="entrenamiento.categoria" />
+    </div>
+  }
+</div>

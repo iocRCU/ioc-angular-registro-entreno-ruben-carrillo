@@ -1,0 +1,43 @@
+<div class="filter-container">
+  <h3>Filtros</h3>
+
+  <form (ngSubmit)="emitFilter()">
+    <div class="form-group">
+      <label for="searchText">Buscar por texto:</label>
+      <input
+        id="searchText"
+        type="text"
+        [(ngModel)]="searchText"
+        name="searchText"
+        (input)="onInputChange()"
+        required
+        minlength="2"
+      />
+      @if (searchText && searchText.length < 2) {
+        <small class="error">Mínimo 2 caracteres</small>
+      }
+    </div>
+
+    <div class="form-group">
+      <label for="categoria">Categoria:</label>
+      <select
+        id="categoria"
+        [(ngModel)]="categoria"
+        name="categoria"
+        (change)="onInputChange()"
+      >
+        @for (cat of categorias; track cat) {
+          <option [value]="cat">{{ cat || 'Todas' }}</option>
+        }
+      </select>
+    </div>
+
+    <button type="submit" [disabled]="searchText.length > 0 && searchText.length < 2">
+      Aplicar
+    </button>
+
+    <button type="button" (click)="reset()">
+      Restablecer
+    </button>
+  </form>
+</div>

@@ -60,3 +60,49 @@ aside {
   border-radius: 4px;
   margin-top: 10px;
 }
+
+
+.container {
+  padding: 20px;
+}
+
+.layout {
+  display: flex;
+  gap: 20px;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
+}
+
+.sidebar {
+  flex: 1;
+}
+
+.detail-panel {
+  flex: 1;
+}
+
+.list-item {
+  padding: 12px;
+  border: 1px solid #ddd;
+  margin-bottom: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+
+  &:hover {
+    background-color: #f5f5f5;
+  }
+}
+
+.card-detail {
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #fafafa;
+}
+
+.meta-info {
+  margin-top: 16px;
+}

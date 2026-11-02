@@ -1,29 +1,35 @@
 <div class="container">
-  <!-- H1 CON EL NOMBR EDE LA APLICACIÓN -->
   <h1>{{ appName }}</h1>
 
-  <!-- PÁRRAFO NOMBRE Y FINALIDAD -->
   <p>Ambiente de trabajo creado per {{ authorName }}, cuya finalidad es: {{ appPurpose }}</p>
 
-  <!-- TARJETA CON DATOS DEL PROYECTO -->
-  <div class="card">
-    <h3>DaTOS del Proyecto</h3>
-    <ul>
-      <li><strong>Tecnologia:</strong> Angular 19</li>
-      <li><strong>Lenguaje:</strong> TypeScript</li>
-      <li><strong>Framework CSS:</strong> SCSS</li>
-      <li><strong>Status:</strong> Base inicial</li>
-    </ul>
+  <div class="layout">
+    <!-- Columna izquierda: filtros y lista -->
+    <div class="sidebar">
+      <app-filter-form
+        (filterChange)="applyFilter($event)"
+        (resetChange)="resetFilter()"
+      />
+      
+      <app-entrenamiento-list
+        [entrenamientos]="entrenamientos()"
+        (selectEntrenamiento)="selectedEntrenamiento.set($event)"
+      />
+    </div>
+
+    <!-- Columna derecha: detalle del seleccionado -->
+    <div class="detail-panel">
+      @if (selectedEntrenamiento()) {
+        <app-entrenamiento-card
+          [entrenamiento]="selectedEntrenamiento()"
+        />
+      } @else {
+        <p>Selecciona un entrenamiento para ver su detalle</p>
+      }
+    </div>
   </div>
 
-  <!-- ASIDE CON NOTA -->
-  <aside>
-    <p><strong>Note:</strong> Projecte base llest</p>
-  </aside>
-
-  <!-- TEXTO OBLIGATORIO -->
   <div class="status">Projecte base llest - El Hot reload funciona perfectamente</div>
 </div>
-
 
 <router-outlet />
