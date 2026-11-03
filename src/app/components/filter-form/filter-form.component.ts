@@ -39,4 +39,12 @@ export class FilterForm {
     this.resetChange.emit();
     this.emitFilter();
   }
+
+  get isTextInvalid(): boolean {
+    return this.searchText.length > 0 && this.searchText.length < this.MIN_LENGTH;
+  }
+
+  get isSubmitDisabled(): boolean {
+    return this.searchText.length > 0 && this.searchText.length < this.MIN_LENGTH;
+  }
 }

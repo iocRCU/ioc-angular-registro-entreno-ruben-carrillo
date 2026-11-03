@@ -1,5 +1,5 @@
-<section class="filter-container">
-  <h2>Filtres</h2>
+<section class="filter-container" aria-labelledby="filtres-title">
+  <h2 id="filtres-title">Filtres</h2>
 
   <form #filtroForm="ngForm" (ngSubmit)="emitFilter()">
     <div class="form-group">
@@ -12,9 +12,13 @@
         (ngModelChange)="onSearchChange($event)"
         required
         minlength="2"
+        #textoInput="ngModel"
       />
-      @if (searchText.length > 0 && searchText.length < MIN_LENGTH) {
-        <small class="error" role="alert">Calen com a mínim 2 caràcters.</small>
+      
+      @if (isTextInvalid) {
+        <small class="error" role="alert">
+          Calen com a mínim {{ MIN_LENGTH }} caràcters. Has introduït {{ searchText.length }}
+        </small>
       }
     </div>
 
@@ -34,7 +38,7 @@
     </div>
 
     <div class="actions">
-      <button type="submit" [disabled]="filtroForm.invalid">Aplicar</button>
+      <button type="submit" [disabled]="isSubmitDisabled">Aplicar</button>
       <button type="button" (click)="reset()">Restablir</button>
     </div>
   </form>
