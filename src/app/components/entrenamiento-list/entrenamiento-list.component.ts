@@ -1,9 +1,10 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Entrenamiento } from '../../models/entrenamiento.model';
 import { TagBadge } from '../tag-badge/tag-badge.component';
+import { FormattedDatePipe } from '../../pipes/formatted-date.pipe';
 
 @Component({
-  imports: [TagBadge],
+  imports: [TagBadge, FormattedDatePipe],
   selector: 'app-entrenamiento-list',
   standalone: true,
   templateUrl: './entrenamiento-list.component.html',
@@ -12,6 +13,10 @@ import { TagBadge } from '../tag-badge/tag-badge.component';
 export class EntrenamientoList {
   @Input() entrenamientos: Entrenamiento[] = [];
   @Output() selectEntrenamiento = new EventEmitter<Entrenamiento>();
+
+  get count(): number {
+    return this.entrenamientos.length;
+  }
 
   select(entrenamiento: Entrenamiento) {
     this.selectEntrenamiento.emit(entrenamiento);

@@ -1,9 +1,10 @@
 import { Component, Input } from '@angular/core';
 import { Entrenamiento } from '../../models/entrenamiento.model';
 import { TagBadge } from '../tag-badge/tag-badge.component';
+import { FormattedDatePipe } from '../../pipes/formatted-date.pipe';
 
 @Component({
-  imports: [TagBadge],
+  imports: [TagBadge, FormattedDatePipe],
   selector: 'app-entrenamiento-card',
   standalone: true,
   templateUrl: './entrenamiento-card.component.html',

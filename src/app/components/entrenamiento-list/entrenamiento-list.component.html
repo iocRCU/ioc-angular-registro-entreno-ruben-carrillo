@@ -1,12 +1,31 @@
 <div class="list-container">
-  @for (entrenamiento of entrenamientos; track entrenamiento.id) {
-    <div 
-      class="list-item"
-      (click)="select(entrenamiento)"
-    >
-      <h3>{{ entrenamiento.titulo }}</h3>
-      <p>{{ entrenamiento.descripcion }}</p>
-      <app-tag-badge [categoria]="entrenamiento.categoria" />
+  <!-- Contador de resultados -->
+  <div class="counter" role="status" aria-live="polite">
+    {{ count }} resultat{{ count !== 1 ? 's' : '' }}
+  </div>
+
+  <!-- Listado con @for -->
+  @if (entrenamientos.length > 0) {
+    @for (entrenamiento of entrenamientos; track entrenamiento.id) {
+      <div 
+        class="list-item"
+        (click)="select(entrenamiento)"
+        tabindex="0"
+        role="button"
+        (keydown.enter)="select(entrenamiento)"
+      >
+        <h3>{{ entrenamiento.titulo }}</h3>
+        <p>{{ entrenamiento.descripcion }}</p>
+        <div class="meta">
+          <app-tag-badge [categoria]="entrenamiento.categoria" />
+          <small>{{ entrenamiento.fecha | formattedDate }}</small>
+        </div>
+      </div>
+    }
+  } @else {
+    <div class="empty-state" role="alert">
+      <p>No s'han trobat entrenaments amb els filtres aplicats.</p>
+      <p>Intenta canviar els paràmetres de cerca o restablir els filtres.</p>
     </div>
   }
 </div>

@@ -6,7 +6,7 @@
   <p class="description">{{ entrenamiento.descripcion }}</p>
 
   <div class="meta-info">
-    <p><strong>Data:</strong> {{ entrenamiento.fecha }}</p>
+    <p><strong>Data:</strong> {{ entrenamiento.fecha | formattedDate  }}</p>
     <p><strong>Durada:</strong> {{ entrenamiento.duracionMinutos }} min</p>
     <p><strong>Destacat:</strong> {{ entrenamiento.destacado ? 'Sí' : 'No' }}</p>
   </div>
