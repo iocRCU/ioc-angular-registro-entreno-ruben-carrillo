@@ -13,7 +13,7 @@ export const ENTRENAMIENTOS_MOCK: Entrenamiento[] = [
   {
     id: 2,
     titulo: 'Running 5km',
-    descripcion: 'Corrida continua en ruta a ritmo moderado.',
+    descripcion: 'Carrera continua en ruta a ritmo moderado.',
     categoria: 'cardio',
     fecha: '2026-10-16',
     duracionMinutos: 30,
@@ -85,7 +85,7 @@ export const ENTRENAMIENTOS_MOCK: Entrenamiento[] = [
   {
     id: 10,
     titulo: 'Full body circuit',
-    descripcion: 'Circuito combinando fuerza y cardio en estaciones.',
+    descripcion: 'Circuito combinando de fuerza y cardio en estaciones.',
     categoria: 'combinado',
     fecha: '2026-10-24',
     duracionMinutos: 55,

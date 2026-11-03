@@ -1,4 +1,7 @@
 <div class="container">
+  <!-- Enlace de salto para dar accesibilidad -->
+  <a href="#main-content" class="skip-link">Saltar al contingut principal</a>
+
   <h1>{{ appName }}</h1>
 
   <p>Ambiente de trabajo creado per {{ authorName }}, cuya finalidad es: {{ appPurpose }}</p>
@@ -28,4 +31,8 @@
   <div class="status">Projecte base llest - El hot reload funciona perfectament</div>
 </div>
 
-<router-outlet />
+<!-- ID para el enlace de salto -->
+<main id="main-content">
+  <router-outlet />
+</main>
+
