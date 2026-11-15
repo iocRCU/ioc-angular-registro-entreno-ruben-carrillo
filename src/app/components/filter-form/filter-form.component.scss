@@ -1,11 +1,11 @@
-.filter-container {
+.filter-form {
   padding: 16px;
   border: 1px solid #ddd;
   border-radius: 8px;
   margin-bottom: 16px;
 }
 
-.form-group {
+.campo {
   margin-bottom: 12px;
 
   label {
@@ -22,7 +22,7 @@
     border-radius: 4px;
     font-size: 1rem;
 
-    &:focus {
+    &:focus-visible {
       outline: 2px solid #6d4aff;
       outline-offset: 2px;
     }
@@ -33,14 +33,13 @@
   }
 }
 
-.error {
-  display: block;
+.errores p {
   color: #e74c3c;
   font-size: 0.85rem;
-  margin-top: 4px;
+  margin: 4px 0 0;
 }
 
-.actions {
+.acciones {
   display: flex;
   gap: 8px;
   margin-top: 12px;
@@ -57,7 +56,7 @@
       color: white;
     }
 
-    &:last-child {
+    &.btn-limpiar {
       background-color: #95a5a6;
       color: white;
     }
@@ -65,6 +64,35 @@
     &:disabled {
       opacity: 0.5;
       cursor: not-allowed;
+    }
+  }
+}
+
+.historial {
+  margin-top: 12px;
+
+  p {
+    margin: 0 0 6px;
+    font-weight: 600;
+    font-size: 0.9rem;
+  }
+
+  .chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .chip {
+    cursor: pointer;
+    border: 1px solid #ccc;
+    border-radius: 999px;
+    padding: 4px 12px;
+    background: #f6f4ff;
+    font-size: 0.85rem;
+
+    &:focus-visible {
+      outline: 2px solid #6d4aff;
     }
   }
 }

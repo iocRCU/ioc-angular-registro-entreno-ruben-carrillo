@@ -1,6 +1,6 @@
 import { Injectable, inject, signal } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Subject, switchMap, tap, map, catchError, of } from 'rxjs';
+import { Subject, switchMap, tap, map, catchError, of, Observable } from 'rxjs';
 import { environment } from '../../environments/environment';
 import { EntrenamientoApi } from '../models/entrenamiento-api.model';
 import { Entrenamiento } from '../models/entrenamiento.model';
@@ -87,4 +87,14 @@ export class EntrenamientoService {
   crear(datos: NuevoEntrenamiento): void {
     this.creaciones$.next(datos);
   }
+
+  /** Comprueba si un término de búsqueda tiene resultados en la API (lo usa el validador asíncrono). */
+  tieneResultados(termino: string): Observable<boolean> {
+    return this.http
+      .get<EntrenamientoApi[]>(`${this.apiUrl}?q=${encodeURIComponent(termino)}`)
+      .pipe(map((lista) => lista.length > 0));
+  }
+
+
+
 }
