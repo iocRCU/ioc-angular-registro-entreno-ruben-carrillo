@@ -8,7 +8,8 @@ export const ENTRENAMIENTOS_MOCK: Entrenamiento[] = [
     categoria: 'fuerza',
     fecha: '2026-10-15',
     duracionMinutos: 75,
-    destacado: true
+    destacado: true,
+    estado: 'completado'
   },
   {
     id: 2,
@@ -17,7 +18,8 @@ export const ENTRENAMIENTOS_MOCK: Entrenamiento[] = [
     categoria: 'cardio',
     fecha: '2026-10-16',
     duracionMinutos: 30,
-    destacado: false
+    destacado: false,
+    estado: 'completado'
   },
   {
     id: 3,
@@ -26,7 +28,8 @@ export const ENTRENAMIENTOS_MOCK: Entrenamiento[] = [
     categoria: 'flexibilidad',
     fecha: '2026-10-17',
     duracionMinutos: 45,
-    destacado: false
+    destacado: false,
+    estado: 'completado'
   },
   {
     id: 4,
@@ -35,7 +38,8 @@ export const ENTRENAMIENTOS_MOCK: Entrenamiento[] = [
     categoria: 'fuerza',
     fecha: '2026-10-18',
     duracionMinutos: 80,
-    destacado: true
+    destacado: true,
+    estado: 'completado'  
   },
   {
     id: 5,
@@ -44,7 +48,8 @@ export const ENTRENAMIENTOS_MOCK: Entrenamiento[] = [
     categoria: 'descanso',
     fecha: '2026-10-19',
     duracionMinutos: 20,
-    destacado: false
+    destacado: false,
+    estado: 'recuperacion'
   },
   {
     id: 6,
@@ -53,7 +58,8 @@ export const ENTRENAMIENTOS_MOCK: Entrenamiento[] = [
     categoria: 'combinado',
     fecha: '2026-10-20',
     duracionMinutos: 20,
-    destacado: false
+    destacado: false,
+    estado: 'completado'
   },
   {
     id: 7,
@@ -62,7 +68,8 @@ export const ENTRENAMIENTOS_MOCK: Entrenamiento[] = [
     categoria: 'cardio',
     fecha: '2026-10-21',
     duracionMinutos: 90,
-    destacado: false
+    destacado: false,
+    estado: 'completado'
   },
   {
     id: 8,
@@ -71,7 +78,8 @@ export const ENTRENAMIENTOS_MOCK: Entrenamiento[] = [
     categoria: 'fuerza',
     fecha: '2026-10-22',
     duracionMinutos: 35,
-    destacado: false
+    destacado: false,
+    estado: 'completado'
   },
   {
     id: 9,
@@ -80,7 +88,8 @@ export const ENTRENAMIENTOS_MOCK: Entrenamiento[] = [
     categoria: 'flexibilidad',
     fecha: '2026-10-23',
     duracionMinutos: 40,
-    destacado: false
+    destacado: false,
+    estado: 'recuperacion'
   },
   {
     id: 10,
@@ -89,7 +98,8 @@ export const ENTRENAMIENTOS_MOCK: Entrenamiento[] = [
     categoria: 'combinado',
     fecha: '2026-10-24',
     duracionMinutos: 55,
-    destacado: true
+    destacado: true,
+    estado: 'completado'
   },
   {
     id: 11,
@@ -98,7 +108,8 @@ export const ENTRENAMIENTOS_MOCK: Entrenamiento[] = [
     categoria: 'cardio',
     fecha: '2026-10-25',
     duracionMinutos: 50,
-    destacado: false
+    destacado: false,
+    estado: 'pendiente'
   },
   {
     id: 12,
@@ -107,6 +118,7 @@ export const ENTRENAMIENTOS_MOCK: Entrenamiento[] = [
     categoria: 'descanso',
     fecha: '2026-10-26',
     duracionMinutos: 0,
-    destacado: false
+    destacado: false,
+    estado: 'recuperacion'
   }
 ];
