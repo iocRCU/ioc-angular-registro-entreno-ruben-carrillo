@@ -1,13 +1,25 @@
 <div class="container">
-  <!-- Enlace de salto para dar accesibilidad -->
-  <a href="#main-content" class="skip-link">Saltar al contingut principal</a>
+  <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
 
   <h1>{{ appName }}</h1>
 
-  <p>Ambiente de trabajo creado per {{ authorName }}, cuya finalidad es: {{ appPurpose }}</p>
+  <p>Ambiente de trabajo creado por {{ authorName }}, cuya finalidad es: {{ appPurpose }}</p>
+
+  <!-- Banner de error con reintentar -->
+  @if (error(); as mensajeError) {
+    <div class="error-banner" role="alert">
+      <p>{{ mensajeError }}</p>
+      <button type="button" (click)="reintentar()">Reintentar</button>
+    </div>
+  }
 
   <div class="layout">
     <div class="sidebar">
+      <!-- NUEVO: indicador de carga -->
+      @if (cargando()) {
+        <p class="loading" role="status">Cargando entrenamientos…</p>
+      }
+
       <app-filter-form
         (filterChange)="applyFilter($event)"
         (resetChange)="resetFilter()"
@@ -17,6 +29,11 @@
         [entrenamientos]="entrenamientos()"
         (selectEntrenamiento)="selectedEntrenamiento.set($event)"
       />
+
+      <!-- Botón de prueba para el POST -->
+      <button type="button" class="btn-post" (click)="crearPrueba()">
+        Crear entrenamiento de prueba (POST)
+      </button>
     </div>
 
     <div class="detail-panel">
@@ -31,8 +48,6 @@
   <div class="status">Projecte base llest - El hot reload funciona perfectament</div>
 </div>
 
-<!-- ID para el enlace de salto -->
 <main id="main-content">
   <router-outlet />
 </main>
-

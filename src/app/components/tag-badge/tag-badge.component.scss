@@ -12,3 +12,29 @@
 .badge-flexibilidad { background-color: #9b59b6; color: #fff; }
 .badge-descanso { background-color: #95a5a6; color: #fff; }
 .badge-combinado { background-color: #e67e22; color: #fff; }
+
+.error-banner {
+  background: #fdecea;
+  border: 1px solid #b71c1c;
+  color: #b71c1c;
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+
+  button {
+    cursor: pointer;
+  }
+}
+
+.loading {
+  font-style: italic;
+}
+
+.btn-post {
+  margin-top: 0.75rem;
+  cursor: pointer;
+}

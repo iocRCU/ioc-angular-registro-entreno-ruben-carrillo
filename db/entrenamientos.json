@@ -1,16 +1,134 @@
 {
   "entrenamientos": [
-    { "id": 1, "titulo": "Sentadilla y peso muerto", "descripcion": "Sesión de fuerza en gimnasio, 4x8 en ejercicios básicos", "categoria": "fuerza", "fecha": "2026-10-05", "estado": "completado", "duracionMinutos": 60, "destacado": true },
-    { "id": 2, "titulo": "Carrera 10K parque", "descripcion": "Trote continuo por el parque a ritmo suave", "categoria": "cardio", "fecha": "2026-10-07", "estado": "completado", "duracionMinutos": 55, "destacado": false },
-    { "id": 3, "titulo": "Yoga dinámico", "descripcion": "Sesión de movilidad y estiramiento profundo", "categoria": "flexibilidad", "fecha": "2026-10-09", "estado": "completado", "duracionMinutos": 40, "destacado": false },
-    { "id": 4, "titulo": "Descanso activo", "descripcion": "Paseo ligero y foam roller", "categoria": "descanso", "fecha": "2026-10-11", "estado": "recuperacion", "duracionMinutos": 30, "destacado": false },
-    { "id": 5, "titulo": "HIIT + core", "descripcion": "Circuito de intervalos con plancha y hollow hold", "categoria": "combinado", "fecha": "2026-10-13", "estado": "completado", "duracionMinutos": 45, "destacado": true },
-    { "id": 6, "titulo": "Press banca y remo", "descripcion": "Empuje y tracción, 5 series", "categoria": "fuerza", "fecha": "2026-10-15", "estado": "completado", "duracionMinutos": 65, "destacado": false },
-    { "id": 7, "titulo": "Intervalos 400m", "descripcion": "8x400m con recuperación de 90 segundos", "categoria": "cardio", "fecha": "2026-10-17", "estado": "completado", "duracionMinutos": 50, "destacado": true },
-    { "id": 8, "titulo": "Pilates mat", "descripcion": "Control postural y respiración", "categoria": "flexibilidad", "fecha": "2026-10-19", "estado": "completado", "duracionMinutos": 50, "destacado": false },
-    { "id": 9, "titulo": "Movilidad hombros y cadera", "descripcion": "", "categoria": "descanso", "fecha": "2026-10-21", "estado": "recuperacion", "duracionMinutos": 25, "destacado": false },
-    { "id": 10, "titulo": "Paseo corto por lesión", "descripcion": "Día perdido por lesión leve, solo paseo corto", "categoria": "descanso", "fecha": "2026-10-23", "estado": "pendiente", "duracionMinutos": 20, "destacado": false },
-    { "id": 11, "titulo": "CrossFit WOD Cindy", "descripcion": "AMRAP 20 min: dominadas, flexiones y sentadillas", "categoria": "combinado", "fecha": "2026-10-25", "estado": "completado", "duracionMinutos": 20, "destacado": true },
-    { "id": 12, "titulo": "Carrera larga 15K", "descripcion": "Tirada larga a ritmo conversacional", "categoria": "cardio", "fecha": "2026-10-27", "estado": "completado", "duracionMinutos": 90, "destacado": false }
+    {
+      "id": 1,
+      "titulo": "Sentadilla y peso muerto",
+      "descripcion": "Sesión de fuerza en gimnasio, 4x8 en ejercicios básicos",
+      "categoria": "fuerza",
+      "fecha": "2026-10-05",
+      "estado": "completado",
+      "duracionMinutos": 60,
+      "destacado": true
+    },
+    {
+      "id": 2,
+      "titulo": "Carrera 10K parque",
+      "descripcion": "Trote continuo por el parque a ritmo suave",
+      "categoria": "cardio",
+      "fecha": "2026-10-07",
+      "estado": "completado",
+      "duracionMinutos": 55,
+      "destacado": false
+    },
+    {
+      "id": 3,
+      "titulo": "Yoga dinámico",
+      "descripcion": "Sesión de movilidad y estiramiento profundo",
+      "categoria": "flexibilidad",
+      "fecha": "2026-10-09",
+      "estado": "completado",
+      "duracionMinutos": 40,
+      "destacado": false
+    },
+    {
+      "id": 4,
+      "titulo": "Descanso activo",
+      "descripcion": "Paseo ligero y foam roller",
+      "categoria": "descanso",
+      "fecha": "2026-10-11",
+      "estado": "recuperacion",
+      "duracionMinutos": 30,
+      "destacado": false
+    },
+    {
+      "id": 5,
+      "titulo": "HIIT + core",
+      "descripcion": "Circuito de intervalos con plancha y hollow hold",
+      "categoria": "combinado",
+      "fecha": "2026-10-13",
+      "estado": "completado",
+      "duracionMinutos": 45,
+      "destacado": true
+    },
+    {
+      "id": 6,
+      "titulo": "Press banca y remo",
+      "descripcion": "Empuje y tracción, 5 series",
+      "categoria": "fuerza",
+      "fecha": "2026-10-15",
+      "estado": "completado",
+      "duracionMinutos": 65,
+      "destacado": false
+    },
+    {
+      "id": 7,
+      "titulo": "Intervalos 400m",
+      "descripcion": "8x400m con recuperación de 90 segundos",
+      "categoria": "cardio",
+      "fecha": "2026-10-17",
+      "estado": "completado",
+      "duracionMinutos": 50,
+      "destacado": true
+    },
+    {
+      "id": 8,
+      "titulo": "Pilates mat",
+      "descripcion": "Control postural y respiración",
+      "categoria": "flexibilidad",
+      "fecha": "2026-10-19",
+      "estado": "completado",
+      "duracionMinutos": 50,
+      "destacado": false
+    },
+    {
+      "id": 9,
+      "titulo": "Movilidad hombros y cadera",
+      "descripcion": "",
+      "categoria": "descanso",
+      "fecha": "2026-10-21",
+      "estado": "recuperacion",
+      "duracionMinutos": 25,
+      "destacado": false
+    },
+    {
+      "id": 10,
+      "titulo": "Paseo corto por lesión",
+      "descripcion": "Día perdido por lesión leve, solo paseo corto",
+      "categoria": "descanso",
+      "fecha": "2026-10-23",
+      "estado": "pendiente",
+      "duracionMinutos": 20,
+      "destacado": false
+    },
+    {
+      "id": 11,
+      "titulo": "CrossFit WOD Cindy",
+      "descripcion": "AMRAP 20 min: dominadas, flexiones y sentadillas",
+      "categoria": "combinado",
+      "fecha": "2026-10-25",
+      "estado": "completado",
+      "duracionMinutos": 20,
+      "destacado": true
+    },
+    {
+      "id": 12,
+      "titulo": "Carrera larga 15K",
+      "descripcion": "Tirada larga a ritmo conversacional",
+      "categoria": "cardio",
+      "fecha": "2026-10-27",
+      "estado": "completado",
+      "duracionMinutos": 90,
+      "destacado": false
+    },
+    {
+      "titulo": "Entrenamiento de prueba 4:01:30 PM",
+      "descripcion": "Creado desde la interfaz para probar el POST del servicio.",
+      "categoria": "combinado",
+      "fecha": "2026-11-15",
+      "estado": "pendiente",
+      "duracionMinutos": 30,
+      "destacado": false,
+      "id": 13
+    }
   ]
 }
