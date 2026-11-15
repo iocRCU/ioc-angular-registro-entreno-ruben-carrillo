@@ -1,99 +1,57 @@
 # TTracker
 
-## Autor/a
+Aplicación de registro de entrenamientos (fuerza, cardio, flexibilidad,
+descanso y combinados) con búsqueda reactiva, filtros por categoría,
+detalle de cada entrenamiento e historial de búsquedas.
+Proyecto Angular 22 para el EAC3 de DA2 OA01 (RA3: integración con
+servicios externos y formularios avanzados).
 
-Ruben Carrillo
+## Versiones
 
-## Descripción
+- Node.js 24.15.0 (LTS 24.x)
+- npm 11.x
+- Angular CLI 22.x / Angular 22.x
+- TypeScript 6.0.x
+- json-server 0.17.4 (dependencia de desarrollo)
 
-Aplicación de seguimiento de entrenamientos con registro de ejercicios, volúmenes, cargas y tiempos. Permite gestionar variantes de ejercicios y mantener un historial de progresión.
+## Branca de trabajo
 
-## Versiones utilizadas
+- Este EAC se desarrolla en la branca `ra3-serveis`.
 
-| Herramienta | Versión |
-|-------------|---------|
-| Angular | 22.2.2 |
-| TypeScript | 6.0.x |
-| Node.js | 24.15.0 |
-| npm | 11.12.1 |
-| Git | Latest |
+## Comandas
 
-## Cómo crear y ejecutar el proyecto
+```bash
+npm install        # instalar dependencias
+npm run api        # arrancar la API local (json-server, puerto 3000)
+ng serve           # arrancar la app en http://localhost:4200
+npm test           # tests unitarios
+npm run build      # build de producción
+```
 
-### Requisitos previos
+## API local
 
-- Node.js 24.15.0 o superior
-- npm 11.12.1 o superior
-- Git
+- Fichero de datos: `db/entrenamientos.json` (12 entrenamientos).
+- URL base: `http://localhost:3000`
+- Endpoint principal: `http://localhost:3000/entrenamientos`
+- Búsqueda por texto (json-server): `http://localhost:3000/entrenamientos?q=<término>`
+- Script: `npm run api` → `json-server --watch db/entrenamientos.json --port 3000`
 
-### Instalación
+## Arquitectura
 
-1. Clonar el repositorio:
+- **Models:** `entrenamiento-api.model.ts` (respuesta API), `entrenamiento.model.ts`
+  (modelo interno con tipos `Categoria` y `EstadoEntrenamiento`),
+  `entrenamiento.adapter.ts` (adaptador normalizador).
+- **Serveis:** `entrenamiento.service.ts` (GET/POST, signals de carga/error/datos,
+  `switchMap` para cancelar peticiones pendientes, reintentos).
+- **Formularis:** `filter-form` (formulario reactivo con validación síncrona
+  `required`/`minLength(3)`, validador asíncrono contra la API con debounce de
+  350 ms) e historial de búsquedas en localStorage
+  (clave `ttracker_historial_busquedas`, máximo 5, con try/catch).
+- **Validators:** `resultado-existe.validator.ts` (comprueba si un término
+  tiene resultados en la API).
 
-   ```bash
-   git clone https://github.com/iocRCU/ioc-angular-registro-entreno-ruben-carrillo.git
-   cd ioc-angular-registro-entreno-ruben-carrillo
-   ```
+## Documentación técnica
 
-2. Instalar dependencias:
-
-   ```bash
-   npm install
-   ```
-
-3. Ejecutar en desarrollo:
-
-   ```bash
-   ng serve
-   ```
-
-4. Construir para producción:
-
-   ```bash
-   ng build
-   ```
-
-5. Ejecutar tests:
-
-   ```bash
-   ng test
-   ```
-
-Accede a http://localhost:4200/.
-
-## Ramas del proyecto
-
-| Rama | Descripción |
-|------|-------------|
-| `main` | Versión inicial |
-| `ra1-setup` | Configuración base EAC1 |
-| `ra2-components` | **Componentes e interfaz EAC2** (rama de revisión) |
-| `ra3-serveis` | Servicios (pendiente) |
-| `ra4-navegacion` | Navegación (pendiente) |
-
-## Componentes creados (EAC2)
-
-| Componente | Archivo | Responsabilidad |
-|------------|---------|-----------------|
-| `app-entrenamiento-list` | `src/app/components/entrenamiento-list/entrenamiento-list.component.ts` | Renderiza el listado y emite la selección de un elemento |
-| `app-entrenamiento-card` | `src/app/components/entrenamiento-card/entrenamiento-card.component.ts` | Muestra el detalle del elemento seleccionado |
-| `app-tag-badge` | `src/app/components/tag-badge/tag-badge.component.ts` | Etiqueta de categoría con estilo propio |
-| `app-filter-form` | `src/app/components/filter-form/filter-form.component.ts` | Gestiona los filtros y sus validaciones |
-
-## Otros archivos relevantes
-
-| Archivo | Contenido |
-|---------|-----------|
-| `src/app/models/entrenamiento.model.ts` | Interfaz `Entrenamiento` |
-| `src/app/models/entrenamientos.mock.ts` | Datos mock (12 elementos) |
-| `src/app/models/filtro.model.ts` | Interfaz `FiltroEntrenamientos` |
-| `src/app/pipes/formatted-date.pipe.ts` | Pipe `formattedDate` para dar formato a las fechas |
-
-## Comandos disponibles
-
-| Comando | Acción |
-|---------|--------|
-| `npm install` | Instala las dependencias |
-| `ng serve` | Sirve la aplicación en desarrollo |
-| `ng build` | Construye el proyecto para producción |
-| `ng test` | Ejecuta los tests |
+- `docs/models.md` — tabla de mapatge API → modelo interno y normalizaciones del adaptador.
+- `docs/serveis.md` — servicio HTTP, signals y flujos con switchMap.
+- `docs/formularis.md` — formulario reactivo, validaciones e historial.
